@@ -1,9 +1,9 @@
-import { getAllTasks } from '@/api/requests'
+import api from '@/api'
 import AddTask from './components/AddTask'
 import TodoList from './components/TodoList'
 
 export default async function Home(): Promise<JSX.Element> {
-	const tasks = await getAllTasks()
+	const tasks = await api.tasks.getAllTasks()
 	console.log(tasks)
 
 	return (
