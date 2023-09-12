@@ -1,11 +1,9 @@
 import type { ITask } from '@/types/task.interface'
-import type { AxiosInstance } from 'axios'
+import { httpClient } from '@/api'
 
-const tasksRequestModule = (httpClient: AxiosInstance) => ({
-	async getAllTasks(): Promise<ITask[]> {
+export default {
+	async getAllTasks() {
 		const { data } = await httpClient.get('/tasks')
 		return data as ITask[]
 	},
-})
-
-export default tasksRequestModule
+}
