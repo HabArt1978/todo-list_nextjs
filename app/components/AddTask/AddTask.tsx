@@ -5,6 +5,7 @@ import ModalBox from '../UI/ModalBox'
 import { type FormEventHandler, useState } from 'react'
 import api from '@/api'
 import { useRouter } from 'next/navigation'
+import { v4 as uuidv4 } from 'uuid'
 
 const AddTask = (): JSX.Element => {
 	const router = useRouter()
@@ -17,7 +18,7 @@ const AddTask = (): JSX.Element => {
 		event.preventDefault()
 
 		await api.tasks.createTask({
-			id: '12',
+			id: uuidv4(),
 			text: newTaskValue,
 		})
 
