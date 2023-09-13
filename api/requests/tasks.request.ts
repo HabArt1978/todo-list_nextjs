@@ -13,8 +13,13 @@ export default {
 		return data as ITask[]
 	},
 
-	async createTask(data: ITask): Promise<ITask> {
-		const res = await httpClient.post('/tasks', data)
+	async createTask(task: ITask): Promise<ITask> {
+		const res = await httpClient.post('/tasks', task)
+		return res.data as ITask
+	},
+
+	async updateTask(task: ITask): Promise<ITask> {
+		const res = await httpClient.put(`/tasks/${task.id}`, task)
 		return res.data as ITask
 	},
 }
