@@ -22,4 +22,8 @@ export default {
 		const res = await httpClient.put(`/tasks/${task.id}`, task)
 		return res.data as ITask
 	},
+
+	async deleteTask(id: string): Promise<void> {
+		await httpClient.delete(`/tasks/${id}`)
+	},
 }

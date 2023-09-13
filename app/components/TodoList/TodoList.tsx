@@ -12,8 +12,8 @@ const TodoList: FC<ITodosListProps> = ({ tasks }): JSX.Element => {
 			<table className="table">
 				<thead>
 					<tr>
-						<th>задачи</th>
-						<th>действия</th>
+						<th className="text-base text-blue-500">задачи</th>
+						<th className="text-base text-orange-400">действия</th>
 					</tr>
 				</thead>
 				{tasks.map((task) => (

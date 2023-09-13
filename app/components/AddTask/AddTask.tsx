@@ -30,14 +30,16 @@ const AddTask = (): JSX.Element => {
 	return (
 		<div>
 			<button
-				className="btn btn-primary w-full"
+				className="btn bg-orange-300 hover:bg-orange-400 w-full  text-gray-600"
 				onClick={() => setModalOpen(true)}
 			>
 				Добавить задачу <HiPlus size={18} />
 			</button>
 			<ModalBox modalOpen={modalOpen} setModalOpen={setModalOpen}>
 				<form onSubmit={handleSubmitNewTask}>
-					<h3 className="font-bold text-lg">Добавить новую задачу</h3>
+					<h3 className="font-bold text-lg text-gray-600">
+						Добавить новую задачу
+					</h3>
 					<div className="modal-action">
 						<input
 							type="text"

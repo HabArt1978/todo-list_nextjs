@@ -33,6 +33,12 @@ const Task: FC<ITaskProps> = ({ task }): JSX.Element => {
 		router.refresh()
 	}
 
+	const handleDeleteTask = async (id: string): Promise<void> => {
+		await api.tasks.deleteTask(id)
+		setOpenModalDeleted(false)
+		router.refresh()
+	}
+
 	return (
 		<tbody key={task.id}>
 			<tr>
@@ -66,7 +72,29 @@ const Task: FC<ITaskProps> = ({ task }): JSX.Element => {
 						</form>
 					</ModalBox>
 
-					<HiOutlineTrash className="text-red-500" size={25} cursor="pointer" />
+					<HiOutlineTrash
+						className="text-red-500"
+						size={25}
+						cursor="pointer"
+						onClick={() => setOpenModalDeleted(true)}
+					/>
+
+					<ModalBox
+						modalOpen={openModalDeleted}
+						setModalOpen={setOpenModalDeleted}
+					>
+						<h3 className="text-lg">
+							Вы уверены, что хотите удалить эту задачу?
+						</h3>
+						<div className="modal-action">
+							<button
+								className="btn bg-red-400 hover:bg-red-500"
+								onClick={() => handleDeleteTask(task.id)}
+							>
+								Удалить
+							</button>
+						</div>
+					</ModalBox>
 				</td>
 			</tr>
 		</tbody>
