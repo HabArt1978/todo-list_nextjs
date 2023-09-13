@@ -1,5 +1,5 @@
 import api from '@/api'
-import AddTaskBtn from './components/UI/AddTaskBtn'
+import AddTask from './components/AddTask/AddTask'
 import TodoList from './components/TodoList/TodoList'
 
 export default async function Home(): Promise<JSX.Element> {
@@ -10,7 +10,7 @@ export default async function Home(): Promise<JSX.Element> {
 		<main className="max-w-4xl mx-auto mt-4">
 			<div className="text-center my-4 flex flex-col gap-4">
 				<h1 className="text-2xl font-bold">Cписок дел</h1>
-				<AddTaskBtn />
+				<AddTask />
 			</div>
 			<TodoList tasks={tasks} />
 		</main>
