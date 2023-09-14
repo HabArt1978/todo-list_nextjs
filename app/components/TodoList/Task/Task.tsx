@@ -28,7 +28,6 @@ const Task: FC<ITaskProps> = ({ task }): JSX.Element => {
 			text: taskToEdit,
 		})
 
-		setTaskToEdit('')
 		setOpenModalEdit(false)
 		router.refresh()
 	}
