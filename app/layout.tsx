@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
 	title: 'Список дел',
-	description: 'Учебный проект Next.js, tailwindcss, daisyuiUi',
+	description: 'Учебный проект Next.js, tailwindcss, daisyUi',
 }
 
 export default function RootLayout({
